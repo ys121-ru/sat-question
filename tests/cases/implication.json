@@ -1,0 +1,6 @@
+{
+  "description": "(A → B) ∧ A ∧ ¬B is UNSAT — agent says no",
+  "formula": "(A → B) ∧ A ∧ ¬B",
+  "agent_answer": "no",
+  "expect": { "verdict": "pass", "score": 1.0 }
+}

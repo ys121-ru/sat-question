@@ -1,0 +1,6 @@
+{
+  "description": "(A ∨ ¬B) ∧ (¬A ∨ C) is SAT — agent says yes",
+  "formula": "(A ∨ ¬B) ∧ (¬A ∨ C)",
+  "agent_answer": "yes",
+  "expect": { "verdict": "pass", "score": 1.0 }
+}

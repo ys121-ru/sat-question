@@ -1,0 +1,6 @@
+{
+  "description": "Agent returns something other than yes/no",
+  "formula": "A ∨ B",
+  "agent_answer": "satisfiable",
+  "expect": { "verdict": "fail", "score": 0.0 }
+}

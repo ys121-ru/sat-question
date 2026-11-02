@@ -1,0 +1,6 @@
+{
+  "description": "SAT formula but agent wrongly says no",
+  "formula": "(A ∨ ¬B) ∧ (¬A ∨ C)",
+  "agent_answer": "no",
+  "expect": { "verdict": "fail", "score": 0.0 }
+}

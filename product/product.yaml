@@ -1,0 +1,11 @@
+_ > nanoagent.plugin.manifest.ProductConfig:
+tagline: "Decide whether a propositional formula is satisfiable"
+summary: "Given a propositional logic formula, the agent decides whether it is satisfiable — whether there exists an assignment of truth values to its variables that makes it true — and answers yes or no. The verifier checks the answer using the Glucose3 SAT solver."
+highlights:
+  - "Flexible formula syntax: ¬ ∧ ∨ → ↔ with multi-character variable names"
+  - "Powered by the Glucose3 SAT solver via python-sat"
+  - "Three constraints checked in order: formula parses, answer is yes/no, answer matches solver"
+steps:
+  - "Read the propositional formula given in the task"
+  - "Reason about whether any assignment of truth values satisfies it"
+  - "Call submit with the formula and your answer (yes or no)"

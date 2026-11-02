@@ -1,0 +1,38 @@
+_ > nanoagent.plugin.manifest.ManifestConfig:
+id: sat-question
+name: SAT Question
+version: 0.1.0
+status: ready
+nanoagent: ~=0.5.0
+
+runtime > nanoagent.plugin.manifest.RuntimeConfig:
+  type: mcp_stdio
+  command: [uv, run, --frozen, python, -m, plugin]
+
+permissions > nanoagent.plugin.manifest.PermissionsConfig:
+  network > nanoagent.plugin.manifest.NetworkConfig:
+    hosts: []
+  filesystem > nanoagent.plugin.manifest.FilesystemConfig:
+    write: [workspace]
+
+tools > dict[contract.Tool, nanoagent.plugin.manifest.ToolConfig]:
+  submit:
+    description: Submit a yes/no answer for a SAT question and receive the verdict
+
+tasks > dict[contract.Task, nanoagent.plugin.manifest.TaskConfig]:
+  sat-question:
+    description: >-
+      Decide whether a given propositional logic formula is satisfiable
+    runner: agent
+    tools: [submit]
+    reference: null
+    instructions: |-
+      You are given a propositional logic formula. Decide whether it is
+      satisfiable (there exists an assignment of truth values to variables
+      that makes it true) or unsatisfiable (no such assignment exists).
+
+      Supported syntax: variables (A, B, x1), negation (¬ ~ !),
+      conjunction (∧ & and), disjunction (∨ | or),
+      implication (→ ->), biconditional (↔ <->).
+
+      Call submit with the formula exactly as given and your answer ("yes" or "no").
